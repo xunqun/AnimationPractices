@@ -8,35 +8,54 @@
             android:height="24dp"
             android:viewportWidth="24"
             android:viewportHeight="24">
-            <path
-                android:name="path"
-                android:pathData="M 2 7.996 L 7.055 19.658 L 10.426 5 L 15.082 19.658 L 18.852 7.996 L 22.852 15.311"
-                android:strokeColor="#05bdff"
-                android:strokeWidth="2"
-                android:strokeLineCap="round"
-                android:strokeLineJoin="round"
-                android:fillType="evenOdd"/>
+            <group
+                android:name="group"
+                android:pivotX="12"
+                android:pivotY="12">
+                <path
+                    android:name="path"
+                    android:pathData="M 4 7.722 L 6.819 6.696 L 10.581 17.033 L 7.762 18.059 Z"
+                    android:fillColor="#000"
+                    android:strokeWidth="1"/>
+                <path
+                    android:name="path_1"
+                    android:pathData="M 18.211 5 L 20.369 7.084 L 9.949 17.874 L 7.791 15.79 Z"
+                    android:fillColor="#000"
+                    android:strokeWidth="1"/>
+            </group>
         </vector>
     </aapt:attr>
     <target android:name="path">
         <aapt:attr name="android:animation">
-            <set>
-                <objectAnimator
-                    android:propertyName="trimPathEnd"
-                    android:duration="3000"
-                    android:valueFrom="0"
-                    android:valueTo="1"
-                    android:valueType="floatType"
-                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
-                <objectAnimator
-                    android:propertyName="trimPathStart"
-                    android:startOffset="1000"
-                    android:duration="2000"
-                    android:valueFrom="0"
-                    android:valueTo="1"
-                    android:valueType="floatType"
-                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
-            </set>
+            <objectAnimator
+                android:propertyName="pathData"
+                android:duration="3000"
+                android:valueFrom="M 4 7.722 L 6.819 6.696 L 10.581 17.033 L 7.762 18.059 Z"
+                android:valueTo="M 5 7.194 L 7.046 5 L 18.748 15.912 L 16.702 18.106 Z"
+                android:valueType="pathType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+        </aapt:attr>
+    </target>
+    <target android:name="path_1">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:propertyName="pathData"
+                android:duration="3000"
+                android:valueFrom="M 18.211 5 L 20.369 7.084 L 9.949 17.874 L 7.791 15.79 Z"
+                android:valueTo="M 16.42 5 L 18.578 7.084 L 7.463 18.593 L 5.305 16.509 Z"
+                android:valueType="pathType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+        </aapt:attr>
+    </target>
+    <target android:name="group">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:propertyName="rotation"
+                android:duration="3000"
+                android:valueFrom="0"
+                android:valueTo="360"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
         </aapt:attr>
     </target>
 </animated-vector>
